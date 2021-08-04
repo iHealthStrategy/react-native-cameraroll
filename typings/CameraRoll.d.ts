@@ -20,6 +20,15 @@ declare namespace CameraRoll {
 
   type AlbumType = 'All' | 'Album' | 'SmartAlbum';
 
+  type AlbumSubType =
+    | 'smartAlbumUserLibrary'
+    | 'smartAlbumFavorites'
+    | 'smartAlbumSelfPortraits'
+    | 'smartAlbumPanoramas'
+    | 'smartAlbumTimelapses'
+    | 'smartAlbumBursts'
+    | 'smartAlbumScreenshots';
+
   type Include =
     /** Ensures the filename is included. Has a large performance hit on iOS */
     | 'filename'
@@ -60,6 +69,11 @@ declare namespace CameraRoll {
      * titles.
      */
     groupName?: string;
+
+    /**
+     * Specifies filter on group subtype, basically for smart albums
+     */
+    subType?: string;
 
     /**
      * Specifies filter on asset type
@@ -141,6 +155,7 @@ declare namespace CameraRoll {
   interface Album {
     title: string;
     type: AlbumType;
+    subType?: AlbumSubType;
     count: number;
   }
 

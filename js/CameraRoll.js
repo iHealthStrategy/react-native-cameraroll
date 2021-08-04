@@ -73,6 +73,11 @@ export type GetPhotosParams = {
   groupName?: string,
 
   /**
+   * Specifies filter on group subtype, basically for smart albums
+   */
+  subType?: string,
+
+  /**
    * Specifies filter on asset type
    */
   assetType?: $Keys<typeof ASSET_TYPE_OPTIONS>,
@@ -143,6 +148,7 @@ export type GetAlbumsParams = {
 export type Album = {
   title: string,
   type: string,
+  subType: string,
   count: number,
 };
 
@@ -215,7 +221,7 @@ class CameraRoll {
     return CameraRoll.save(tag, {type});
   }
   static getAlbums(
-    params?: GetAlbumsParams = {
+    params: GetAlbumsParams = {
       assetType: ASSET_TYPE_OPTIONS.All,
       albumType: ALBUM_TYPE_OPTIONS.Album,
     },
