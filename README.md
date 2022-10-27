@@ -7,7 +7,7 @@
 
 ### 为什么这个包在这里？
 
-因为 `@react-native-community/cameraroll` 的官方包有一些问题，它不支持IOS的智能相册获取，有很多人提交了PR修复了这个问题，但是官方并未及时的和代码进去，所以只能在githu上面fork一份，在needle项目中直接以github的方式引入。
+因为 `@react-native-community/cameraroll` 的官方包有一些问题，它不支持IOS的智能相册获取，有很多人提交了PR修复了这个问题，但是官方并未及时的和代码进去，所以只能在github上面fork一份，在needle项目中直接以github的方式引入。
 
 
 `"@react-native-community/cameraroll" : git+ssh://git@github.com:iHealthStrategy/react-native-cameraroll.git`
